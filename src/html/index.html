@@ -1,12 +1,16 @@
 //= partials/head.html
 //= partials/header.html
 		<section class="main-content">
+			<div class="main-content-img">
+				<img src="../img/man.jpg" alt="">
+			</div>
+			<a href="" class="play"></a>
 			<div class="wrapper">
 				<div class="main-content-text">
 					<h3>Правовое сопровождение малого ИТ-бизнеса</h3>
 					<p>Зачастую интернет-проекты, разработчики, маркетологи, дизайнеры, стартаперы и другие IT-специалисты не уделяют должного внимания правовым аспектам своей деятельности. </p>
 					<p>Но <strong>документы должны быть в порядке</strong>, и мы в этом поможем.</p>
-					<a href="#">услуги и цены</a>
+					<a href="#" class="main-content-text-price">услуги и цены</a>
 				</div>
 			</div>
 		</section>
@@ -18,7 +22,7 @@
 			<div class="services-price-item">
 				<div class="wrapper">
 					<div class="services-price-item-ins">
-						<h5>Наведение порядка в делах</h5>
+						<h5 class="services-price-icon-1">Наведение порядка в делах<span>i</span></h5>
 						<p>Аудит документов и платежей на предмет:</p>
 						<ul>
 							<li>соблюдения необходимых формальностей и процедур,</li>
@@ -28,7 +32,7 @@
 
 					</div>
 					<div class="services-price-item-ins">
-						<h5>Оптимизация договорных отношений </h5>
+						<h5 class="services-price-icon-2">Оптимизация договорных отношений <span>i</span></h5>
 						<ul>
 							<li>Доработка, латание дыр и улучшение условий основных типовых договоров вашей компании</li>
 							<li>Оформление сотрудников на оптимальных условиях ведения деятельности и налогообложения</li>
@@ -40,7 +44,7 @@
 			<div class="services-price-item">
 				<div class="wrapper">
 					<div class="services-price-item-ins">
-						<h5>Правовое сопровождение деятельности (юрист-аутсорсер)</h5>
+						<h5 class="services-price-icon-3">Правовое сопровождение деятельности (юрист-аутсорсер)<span>i</span></h5>
 						<ul>
 							<li>Участие в заключении договоров: минимизация рисков, усиление ваших позиций</li>
 							<li>Юридическая консультация</li>
@@ -49,7 +53,7 @@
 						</ul>
 					</div>
 					<div class="services-price-item-ins">
-						<h5>Разработка договоров и другой документации</h5>
+						<h5 class="services-price-icon-4">Разработка договоров и другой документации<span>i</span></h5>
 						<p>К сожалению, конфликты бывают в любой сфере. Если дело близится к суду или уже дошло до него, мы поможем отстоять ваши права и интересы.</p>
 					</div>
 				</div>
@@ -58,31 +62,37 @@
 		<section class="reviews">
 			<div class="wrapper">
 				<h4 class="main-title">отзывы</h4>
-				<p class="title-desc">Мнение наших клиентов делает мир и нас лучше :)</p>
+				<p class="title-desc">Мнение наших клиентов <strong>делает мир и нас лучше :)</strong></p>
 				<div class="reviews-content">
 					<a href="#" class="reviews-item">
-						<p class="reviews-item-subject"><p class="quote"></p></p>
-						<p class="reviews-item-recall">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</p>
+						<div class="reviews-item-subject"><p class="quote"></p></div>
+						<div class="reviews-item-recall">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
 						<div class="reviews-item-destination">
-							
+							<div class="destination-icon"><img src="../img/man-icon-1.jpg" alt=""></div>
+							<div class="destination-name">Алексей Фёдоров</div>
+							<div class="destination-company"><span>CEO</span> deco.agency</div>
 						</div>
 					</a>
 					<a href="#" class="reviews-item">
-						<p class="reviews-item-subject"><p class="quote"></p></p>
-						<p class="reviews-item-recall">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</p>
+						<div class="reviews-item-subject"><p class="quote"></p></div>
+						<div class="reviews-item-recall">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
 						<div class="reviews-item-destination">
-							
+							<div class="destination-icon"><img src="../img/man-icon-2.jpg" alt=""></div>
+							<div class="destination-name">Артур Оруджалиев</div>
+							<div class="destination-company"><span>CEO</span> deco.agency</div>
 						</div>
 					</a>
 					<a href="#" class="reviews-item">
-						<p class="reviews-item-subject"></p>
-						<p class="reviews-item-recall"></p>
+						<div class="reviews-item-subject"><p class="video"></p></div>
+						<div class="reviews-item-recall"></div>
 						<div class="reviews-item-destination">
-							
+							<!-- <div class="destination-icon"><img src="../img/man-icon-1.jpg" alt=""></div> -->
+							<div class="destination-name">Григорий Маленко</div>
+							<div class="destination-company"><span>CEO</span> deco.agency</div>
 						</div>
 					</a>
-					<a href="#" class="load-more">загрузить еще</a>
 				</div>
+				<a href="#" class="load-more"><span>загрузить еще</span></a>
 			</div>
 		</section>
 		<section class="services">
@@ -94,10 +104,18 @@
 						<input type="text" placeholder="Телефон*">
 						<input type="text" placeholder="E-mail*">
 						<input type="text" placeholder="сайт">
+						<select name="" id="">
+							<option value="">МЕНЯ ИНТЕРЕСУЕТ</option>
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>
 					</div>
 					<div class="services-item">
-						<textarea name="" id="" cols="0" rows="0" placeholder="Введите текст ..."></textarea>
+						<label><p>Дополнительная информация</p><textarea name="" id="" cols="0" rows="0" placeholder="Введите текст ..."></textarea></label>
 					</div>
+					<input type="submit" value="отправить">
+					
 				</div>
 			</div>
 		</section>

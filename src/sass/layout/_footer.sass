@@ -1,0 +1,41 @@
+#footer
+	text-align: center
+	a 
+		color: #a70c5d
+		font-size: 18px
+		line-height: 1
+		text-decoration: underline
+	strong
+		font-weight: 900
+		
+.footer-pravo-agency
+	text-transform: uppercase
+	color: #3f4147
+	font-size: 11px
+.footer-text
+	font-size: 18px
+	line-height: 30px
+	color: #3f4147
+.footer-copy
+	font-size: 12px
+.footer-socials
+	a
+		display: inline-block 
+		&:before
+			content: ""
+			font-size: 40px
+			color: #dcdcdc
+			display: inline-block
+			vertical-align: middle
+	.facebook
+		&:before
+			content: ""
+			+font-icon("facebook")
+	.twitter
+		&:before
+			content: ""
+			+font-icon("twitter")
+	.linkedin
+		&:before
+			content: ""
+			+font-icon("linkedin")
