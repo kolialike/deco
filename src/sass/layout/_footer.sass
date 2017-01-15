@@ -1,10 +1,13 @@
 #footer
 	text-align: center
-	a 
+	.mail
 		color: #a70c5d
 		font-size: 18px
 		line-height: 1
+		margin-top: 6px
 		text-decoration: underline
+		display: inline-block
+		
 	strong
 		font-weight: 900
 		
@@ -12,30 +15,50 @@
 	text-transform: uppercase
 	color: #3f4147
 	font-size: 11px
+	margin-top: 31px
+	display: block
 .footer-text
 	font-size: 18px
 	line-height: 30px
 	color: #3f4147
-.footer-copy
-	font-size: 12px
-.footer-socials
+	margin-top: 17px
+	span
+		display: block
+
+.socials
+	margin-top: 25px
+	font-size: 0
+	line-height: 0
+	margin-bottom: 30px
 	a
-		display: inline-block 
+		display: inline-block
+		border: 1px solid #d6d6d6
+		+border-radius(100%)
+		padding: 12px
+		margin: 0 3px
 		&:before
-			content: ""
-			font-size: 40px
+			font-size: 14px
 			color: #dcdcdc
 			display: inline-block
 			vertical-align: middle
+			height: 14px
+			width: 14px
+			line-height: 14px
+			+transition(0.3s)
+		&:hover
+			border-color: #4a6bb8
+			&:before
+				color: #4a6bb8
 	.facebook
 		&:before
-			content: ""
 			+font-icon("facebook")
 	.twitter
 		&:before
-			content: ""
 			+font-icon("twitter")
 	.linkedin
 		&:before
-			content: ""
 			+font-icon("linkedin")
+		
+.footer-copy
+	padding-bottom: 25px
+	font-size: 12px

@@ -18,28 +18,32 @@
 	text-align: center
 	
 .main-content-text
-	margin-top: 180px
-	max-width: 445px
+	margin-top: 173px
+	max-width: 462px
 	width: 100%
 	color: #454545
+	margin-left: 28px
 	h3
 		font-size: 30px
 		line-height: 35px
 		display: block
 		font-weight: bold
-		line-height: 1
-		padding-right: 100px
+		line-height: 1.2
+		padding-right: 113px
+		letter-spacing: 0em
+		margin-bottom: 26px
 		&:after
 			content: ""
 			width: 40px
 			height: 2px
 			background: #a70c5d
-			display: inline-block
+			display: block
+			margin-top: 28px
 	p 
 		font-size: 15px
 		line-height: 24px
 		display: block
-		margin-bottom: 35px
+		margin-bottom: 24px
 	.main-content-text-price
 		font-size: 11px
 		text-transform: uppercase
@@ -47,11 +51,17 @@
 		background: #a70c5d
 		+border-radius(45px)
 		color: #fff
-		padding: 13px 15px 15px
+		padding: 13px 29px 15px 15px
+		display: inline-block
+		margin-top: 31px
 		&:before
-			+font-icon("")
-			font-size: 22px
+			+font-icon("download")
+			font-size: 23px
 			color: #fff
+			font-weight: 300
+			margin-right: 17px
+			display: inline-block
+			vertical-align: middle
 .play 
 	width: 90px
 	height: 90px
@@ -96,8 +106,8 @@
 	font-size: 28px
 	line-height: 30px
 	color: #3f4147
-	margin-bottom: 15px
-	margin-top: 60px
+	margin-bottom: 13px
+	margin-top: 54px
 	&:after
 		content: ""
 		width: 40px
@@ -105,13 +115,13 @@
 		background: #a70c5d
 		display: block
 		margin: auto
-		margin-top: 10px
+		margin-top: 15px
 		
 .title-desc
 	display: block
 	text-align: center
 	margin: auto
-	max-width: 480px
+	max-width: 600px
 	color: #3f4147
 	font-size: 15px
 	line-height: 20px
@@ -119,39 +129,146 @@
 // services-price
 .services-price-item
 	border-bottom: 1px dashed #d0d1d3
-	padding: 35px 0
-
-	&:nth-of-type(1)
+	padding: 35px 0 24px
+	position: relative
+	
+	&.services-price-item-first
 		border-top: 1px solid #f4f4f4
+		margin-top: 55px
 	&:last-child
 		border-bottom: 1px solid #f4f4f4
 	&>.wrapper
 		+pie-clearfix
+.description
+	position: absolute
+	left: 0
+	z-index: 1
+	background: #fff
+	max-height: 0
+	overflow: hidden
+	+opacity(0)
+	+transition(0.2s)
+	width: 50%
+	top: 0
+	padding: 30px 90px 30px 118px
+	+box-sizing(border-box)
+	h5
+		&:before
+			display: none
+			
+	p 
+		letter-spacing: 0.01em
+		margin-bottom: 21px
+	&:after
+		content: ""
+		height: 200px
+		width: 1px
+		background: #a70c5d
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 1
+	.description-arrow
+		position: absolute
+		top: 50px
+		right: -4px
+		+transform(rotate(135deg))
+		width: 8px
+		height: 8px
+		border: 1px solid
+		border-color: #a70c5d transparent transparent #a70c5d
+		background: #fff
+		z-index: 2
+	.description-item-left
+		position: absolute
+		left: -81px
+		top: 21px
+		font-size: 10px
+		text-transform: uppercase
+		font-weight: 900
+	.description-item
+		position: relative
+		
 .services-price-item-ins
 	float: left
 	width: 50%
 	+box-sizing(border-box)
-	padding-left: 70px
-	&:first-child
+	// padding-left: 70px
+	padding-right: 60px
+	padding-left: 129px
+	padding-top: 30px
+	cursor: pointer
+	&:nth-child(odd)
 		border-right: 1px dashed #d0d1d3
-		padding-right: 70px
-		padding-left: 0px
+		// padding-right: 70px
+		// padding-left: 0px
+		.description
+			left: auto
+			right: 0
+	&:nth-child(even)
+		padding-left: 187px
+		padding-right: 0
+	&.active
+		.description
+			max-height: 1000px
+			+opacity(1)
+			overflow: visible
+	&:hover
+		.info
+			background: #a70c5d
+			&:before
+				color: #fff
+		h5
+			&:before
+				color: #a70c5d
 	h5
 		font-size: 15px
-		line-height: 1
+		line-height: 20px
 		display: block
 		color: #3f4147
 		font-weight: bold
-		margin-bottom: 25px
+		margin-bottom: 20px
 		text-transform: uppercase
-		padding-right: 40px
+		padding-right: 20px
 		position: relative
+		span 
+			display: block
 		&:before
 			position: absolute
-			font-size: 45px
+			font-size: 40px
 			color: #b6b6b6
-			left: -45px
-			top: 0
+			left: -70px
+			top: 4px
+			font-weight: 300
+			+transition(0.3s)
+	.info 
+		position: absolute
+		right: 9px
+		top: 5px
+		border: 1px solid #a70c5d
+		+border-radius(100%)
+		text-align: center
+		font-size: 0
+		line-height: 0
+		padding: 7px
+		+transition(0.3s)
+		&:after
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			height: 100%
+			width: 0
+		&:before
+			+font-icon("info")
+			font-size: 12px
+			color: #3f4147
+			height: 14px
+			width: 14px
+			line-height: 14px
+			display: inline-block
+			+transition(0.3s)
+			font-weight: 300
+			
 			
 
 	li 
@@ -159,7 +276,7 @@
 		color: #414252
 		font-size: 13px
 		line-height: 20px
-		margin-bottom: 5px
+		margin-bottom: 0px
 		padding-left: 25px
 		position: relative
 		&:before
@@ -171,8 +288,8 @@
 			+box-sizing(border-box)
 			display: inline-block
 			position: absolute
-			top: 6px
-			left: 8px
+			top: 7px
+			left: 0px
 		
 	p 
 		font-size: 13px
@@ -194,8 +311,10 @@
 // reviews
 .reviews
 	border-bottom: 1px solid #f4f4f4
+	padding-bottom: 58px
 .reviews-content
 	+pie-clearfix
+	margin-top: 70px
 .load-more
 	font-size: 11px
 	line-height: 1
@@ -205,7 +324,7 @@
 	text-align: center
 	text-transform: uppercase
 	color: #454545
-	margin-top: 65px
+	margin-top: 79px
 	span 
 		&:before
 			+font-icon("reloading")
@@ -214,43 +333,61 @@
 			display: inline-block
 			vertical-align: top
 			+transform(rotate(40deg))
-			margin-top: -3px
+			margin-top: -5px
 			margin-right: 12px
 			font-weight: 300
 		
 .reviews-item
-	padding-right: 80px
+	padding-right: 43px
 	+box-sizing(border-box)
 	float: left
 	width: 33.33333%
+	padding-left: 18px
 	.quote
+		padding-top: 4px
 		&:before
 			+font-icon("quote")
-			font-size: 15px
+			font-size: 18px
 			color: #c9cacf
 	.video
+		padding-top: 0px
 		&:before
 			+font-icon("video")
-			font-size: 15px
+			font-size: 22px
 			color: #c9cacf
 	p 
 		color: #3f4147
 .reviews-item-subject
-	margin-bottom: 20px
+	margin-bottom: 13px
 .reviews-item-recall
 	min-height: 120px
 	color: #3f4147
+	line-height: 25px
+	font-size: 17px
 	display: block
+	margin-bottom: 34px
+	.recall-img
+		position: relative
+		margin-bottom: -14px
+		.play
+			width: 41px
+			height: 41px
+			&:before
+				border-top: 5px solid transparent
+				border-bottom: 5px solid transparent
+				border-left: 10px solid #454545
+			&:after
+				display: none
 .reviews-item-destination
 	.destination-icon
 		display: block
-		
+		margin-bottom: 16px
 	.destination-name
 		font-weight: bold
 		color: #3f4147
 		font-size: 13px
 		display: block
-		
+		margin-bottom: 17px
 	.destination-company
 		font-size: 13px
 		color: #3f4147
@@ -265,6 +402,7 @@
 				height: 3px
 				background: #a70c5d
 				+border-radius(100%)
+				margin: 0 4px
 
 
 // reviews
@@ -273,8 +411,22 @@
 // services
 .services
 	border-bottom: 1px solid #f4f4f4
+	padding-bottom: 31px
+	input[type="submit"]
+		font-size: 11px
+		text-transform: uppercase
+		font-weight: bold
+		background: #a70c5d
+		+border-radius(24px)
+		color: #fff
+		padding: 18px 15px 20px
+		display: block
+		width: 180px
+		border: none
+		margin-top: 200px
 .services-content
 	text-align: center
+	padding-top: 35px
 .services-item
 	width: 380px
 	display: inline-block
@@ -286,13 +438,13 @@
 		border-bottom: 1px solid #dcdcdc
 		display: block
 		width: 100%
-		padding: 10px 0
+		padding: 10px 0 8px
 		font-weight: bold
 		text-transform: uppercase
 		color: #3f4147
 		font-size: 11px
 		line-height: 1
-		margin-bottom: 10px
+		margin-bottom: 19px
 		+placeholder 
 			color: #3f4147
 			font-size: 11px
@@ -333,16 +485,10 @@
 			font-size: 11px
 			line-height: 1
 			display: block
-			margin-bottom: 10px
+			margin-bottom: 8px
 			font-weight: bold
-	input[type="submit"]
-		font-size: 11px
-		text-transform: uppercase
-		font-weight: bold
-		background: #a70c5d
-		+border-radius(45px)
-		color: #fff
-		padding: 13px 15px 15px
+			margin-top: 11px
+	
 			
 
 // services
