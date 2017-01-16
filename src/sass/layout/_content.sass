@@ -6,6 +6,8 @@
 	min-height: 670px
 	padding-left: 60px
 	+box-sizing(border-box)
+	+breakpoint(767px)
+		padding-left: 0
 .main-content-img
 	position: absolute
 	top: 0
@@ -16,6 +18,10 @@
 	width: 100%
 	height: 100%
 	text-align: center
+	img 
+		height: 100%
+		width: 100%
+		object-fit: cover
 	
 .main-content-text
 	margin-top: 173px
@@ -23,6 +29,8 @@
 	width: 100%
 	color: #454545
 	margin-left: 28px
+	+breakpoint(767px)
+		margin-left: 0
 	h3
 		font-size: 30px
 		line-height: 35px
@@ -44,24 +52,26 @@
 		line-height: 24px
 		display: block
 		margin-bottom: 24px
-	.main-content-text-price
-		font-size: 11px
-		text-transform: uppercase
-		font-weight: bold
-		background: #a70c5d
-		+border-radius(45px)
+.main-content-text-price
+	font-size: 11px
+	text-transform: uppercase
+	font-weight: bold
+	background: #a70c5d
+	+border-radius(45px)
+	color: #fff
+	padding: 13px 29px 15px 15px
+	display: inline-block
+	margin-top: 31px
+	&:hover
+		background: #d22c83
+	&:before
+		+font-icon("download")
+		font-size: 23px
 		color: #fff
-		padding: 13px 29px 15px 15px
+		font-weight: 300
+		margin-right: 17px
 		display: inline-block
-		margin-top: 31px
-		&:before
-			+font-icon("download")
-			font-size: 23px
-			color: #fff
-			font-weight: 300
-			margin-right: 17px
-			display: inline-block
-			vertical-align: middle
+		vertical-align: middle
 .play 
 	width: 90px
 	height: 90px
@@ -131,14 +141,33 @@
 	border-bottom: 1px dashed #d0d1d3
 	padding: 35px 0 24px
 	position: relative
-	
+	&>.wrapper
+		+pie-clearfix
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: stretch
+		-webkit-property-flex-direction: row
+		-moz-property-flex-direction: row
+		-ms-property-flex-direction: row
+		-o-property-flex-direction: row
+		property-flex-direction: row
+		-webkit-property-justify-content: center
+		-moz-property-justify-content: center
+		-ms-property-justify-content: center
+		-o-property-justify-content: center
+		property-justify-content: center
+		-webkit-property-align-items: stretch
+		-moz-property-align-items: stretch
+		-ms-property-align-items: stretch
+		-o-property-align-items: stretch
+		property-align-items: stretch
+		flex-wrap: wrap
 	&.services-price-item-first
 		border-top: 1px solid #f4f4f4
 		margin-top: 55px
 	&:last-child
 		border-bottom: 1px solid #f4f4f4
-	&>.wrapper
-		+pie-clearfix
 .description
 	position: absolute
 	left: 0
@@ -150,8 +179,10 @@
 	+transition(0.2s)
 	width: 50%
 	top: 0
-	padding: 30px 90px 30px 118px
+	padding: 00px 90px 00px 118px
 	+box-sizing(border-box)
+	+breakpoint(1023px)
+		padding: 0px 25px 0px 90px
 	h5
 		&:before
 			display: none
@@ -161,7 +192,7 @@
 		margin-bottom: 21px
 	&:after
 		content: ""
-		height: 200px
+		height: 210px
 		width: 1px
 		background: #a70c5d
 		position: absolute
@@ -175,20 +206,55 @@
 		+transform(rotate(135deg))
 		width: 8px
 		height: 8px
-		border: 1px solid
+		border: 1px solid 
 		border-color: #a70c5d transparent transparent #a70c5d
 		background: #fff
 		z-index: 2
 	.description-item-left
 		position: absolute
 		left: -81px
-		top: 21px
+		top: -2px
 		font-size: 10px
 		text-transform: uppercase
 		font-weight: 900
+		&.first 
+			top: 21px
+		+breakpoint(1023px)
+			left: -65px
 	.description-item
 		position: relative
-		
+		margin-bottom: 32px
+		font-size: 0
+		line-height: 0
+		&:nth-last-of-type(1)
+			margin-bottom: 0
+	.main-content-text-price
+		line-height: 1
+		padding: 16px 34px 18px
+		margin-top: 12px
+		&:before
+			display: none
+			
+
+
+	.description-item-price
+		width: 33.333%
+		display: inline-block
+		vertical-align: middle
+		strong
+			font-size: 13px
+			line-height: 1
+			letter-spacing: 0.03em
+		p 
+			display: block
+			margin-bottom: 20px
+			margin-top: 3px
+			font-size: 11px
+			line-height: 1
+			&>strong
+				font-size: 18px
+				span 
+					font-size: 11px
 .services-price-item-ins
 	float: left
 	width: 50%
@@ -198,21 +264,49 @@
 	padding-left: 129px
 	padding-top: 30px
 	cursor: pointer
+	+breakpoint(1023px)
+		padding-right: 30px
+		padding-left: 70px
+	+breakpoint(767px)
+		width: 100%
 	&:nth-child(odd)
 		border-right: 1px dashed #d0d1d3
 		// padding-right: 70px
 		// padding-left: 0px
+		+breakpoint(767px)
+			border-right: none
 		.description
 			left: auto
 			right: 0
+			&:after
+				right: auto
+				left: -1px
+			.description-arrow
+				right: auto
+				left: -5px
+				+transform(rotate(-45deg))
 	&:nth-child(even)
 		padding-left: 187px
 		padding-right: 0
+		+breakpoint(1023px)
+			padding-left: 100px
+		+breakpoint(767px)
+			padding-left: 70px
 	&.active
 		.description
 			max-height: 1000px
 			+opacity(1)
 			overflow: visible
+			padding: 30px 90px 30px 118px
+			+breakpoint(1023px)
+				padding: 30px 25px 30px 90px
+		.info
+			background: #a70c5d
+			&:before
+				color: #fff
+		h5
+			&:before
+				color: #a70c5d
 	&:hover
 		.info
 			background: #a70c5d
@@ -229,7 +323,7 @@
 		font-weight: bold
 		margin-bottom: 20px
 		text-transform: uppercase
-		padding-right: 20px
+		padding-right: 46px
 		position: relative
 		span 
 			display: block
@@ -315,6 +409,10 @@
 .reviews-content
 	+pie-clearfix
 	margin-top: 70px
+	+breakpoint(767px)
+		font-size: 0
+		text-align: center
+		line-height: 0
 .load-more
 	font-size: 11px
 	line-height: 1
@@ -325,6 +423,8 @@
 	text-transform: uppercase
 	color: #454545
 	margin-top: 79px
+	+breakpoint(767px)
+		margin-top: 35px
 	span 
 		&:before
 			+font-icon("reloading")
@@ -343,6 +443,20 @@
 	float: left
 	width: 33.33333%
 	padding-left: 18px
+	+breakpoint(1023px)
+		padding-left: 0
+		padding-right: 20px
+	+breakpoint(767px)
+		width: 50%
+		margin-bottom: 35px
+		float: none
+		display: inline-block
+		vertical-align: top
+		text-align: left
+	+breakpoint(550px)
+		width: 100%
+		padding-right: 0
+		margin-bottom: 40px
 	.quote
 		padding-top: 4px
 		&:before
@@ -366,9 +480,24 @@
 	font-size: 17px
 	display: block
 	margin-bottom: 34px
+	+breakpoint(1023px)
+		font-size: 15px
+		line-height: 20px
+	+breakpoint(767px)
+		margin-bottom: 5px
+	+breakpoint(550px)
+		min-height: 0
+		margin-bottom: 18px
 	.recall-img
 		position: relative
 		margin-bottom: -14px
+		height: 207px
+		+breakpoint(767px)
+			margin-bottom: 25px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 		.play
 			width: 41px
 			height: 41px
@@ -388,9 +517,11 @@
 		font-size: 13px
 		display: block
 		margin-bottom: 17px
+		line-height: 1
 	.destination-company
 		font-size: 13px
 		color: #3f4147
+		line-height: 1
 		span
 			// font-size: 12px
 			text-transform: uppercase
@@ -424,15 +555,22 @@
 		width: 180px
 		border: none
 		margin-top: 200px
+		&:hover
+			background: #d62a84
+		+breakpoint(1024px)
+			margin-top: 35px
 .services-content
 	text-align: center
 	padding-top: 35px
 .services-item
-	width: 380px
+	width: 380/1120*100%
 	display: inline-block
 	vertical-align: top
 	text-align: left
 	margin: 0 20px
+	+breakpoint(767px)
+		width: 100%
+		margin: 0 0 30px
 	input
 		border: none
 		border-bottom: 1px solid #dcdcdc

@@ -1,7 +1,9 @@
 jQuery(function($){
   $('select').selectric();
-
-  $(".services-price-item-ins").on('click', function(event) {
+  var servicePrItem = $(".services-price-item-ins")
+  servicePrItem.on('click', function(event) {
   	$(this).toggleClass('active');
   });
+  
+
 });
