@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Base</title>
+	<title>Pravo</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=0.6,maximum-scale=1,user-scalable=no,minimal-ui">
 	<link rel="stylesheet" type="text/css" href="../css/screen.css" />
@@ -12,11 +12,25 @@
 </head>
 <body>
 	<div class="global-wrapper">
+<nav class="mobile-menu">
+    <div class="mobile-menu-item">
+    	<ul>
+			<li><a href="#">Услуги и ЦЕНЫ</a></li>
+			<li><a href="#">ОТЗЫВЫ</a></li>
+			<li class="current-menu-item"><a href="#">КОНТАКТЫ</a></li>
+		</ul>
+		<div class="language">
+			<a href="#">Ru</a>
+		</div>
+		</a>
+    </div>
+</nav>
 <header id="header">
 	<div class="wrapper">
 		<div class="header-content">
 			<a href="#" class="logo"><img src="../img/logo.png" alt=""></a>
-			<div class="languge">
+			<div class="menu-burger"><span class="menu-burger-item"></span></div>
+			<div class="language">
 				<a href="#">Ru</a>
 			</div>
 			<nav class="main-menu">
@@ -32,14 +46,14 @@
 		<section class="main-content">
 			<div class="main-content-img">
 				<img src="../img/man.jpg" alt="">
+				<a href="#" class="play"></a>
 			</div>
-			<a href="#" class="play"></a>
 			<div class="wrapper">
 				<div class="main-content-text">
 					<h3>Правовое сопровождение малого ИТ-бизнеса</h3>
 					<p>Зачастую интернет-проекты, разработчики, маркетологи, дизайнеры, стартаперы и другие IT-специалисты не уделяют должного внимания правовым аспектам своей деятельности. </p>
 					<p>Но <strong>документы должны быть в порядке</strong>, и мы в этом поможем.</p>
-					<a href="#" class="main-content-text-price">услуги и цены</a>
+					<div class="main-content-text-price">услуги и цены</div>
 				</div>
 			</div>
 		</section>
@@ -127,7 +141,7 @@
 			</div>
 			<div class="services-price-item">
 				<div class="wrapper">
-					<div class="services-price-item-ins">
+					<div class="services-price-item-ins services-price-item-second">
 						<h5 class="services-price-icon-3">Правовое сопровождение деятельности (юрист-аутсорсер)<p class="info"></p></h5>
 						<ul>
 							<li>Участие в заключении договоров: минимизация рисков, усиление ваших позиций</li>
@@ -164,7 +178,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="services-price-item-ins">
+					<div class="services-price-item-ins services-price-item-second">
 						<h5 class="services-price-icon-4"><span>Разработка договоров</span> и другой документации<p class="info"></p></h5>
 						<p>К сожалению, конфликты бывают в любой сфере. Если дело близится к суду или уже дошло до него, мы поможем отстоять ваши права и интересы.</p>
 						<div class="description">
@@ -246,7 +260,7 @@
 						<input type="text" placeholder="Телефон*">
 						<input type="text" placeholder="E-mail*">
 						<input type="text" placeholder="сайт">
-						<select name="" id="">
+						<select name="" id="" >
 							<option value="">МЕНЯ ИНТЕРЕСУЕТ</option>
 							<option value="">Наведение порядка в делах</option>
 							<option value="">Правовое сопровождение деятельности</option>

@@ -2,35 +2,58 @@
 .main-content
 	position: relative
 	overflow: hidden
-	// clear: both
 	min-height: 670px
+	height: 100vh
 	padding-left: 60px
 	+box-sizing(border-box)
 	+breakpoint(767px)
 		padding-left: 0
+		height: auto
 .main-content-img
 	position: absolute
 	top: 0
 	bottom: 0
 	right: 0
 	left: 0
-	z-index: -1
+	z-index: 1
 	width: 100%
 	height: 100%
 	text-align: center
+	+breakpoint(767px)
+		position: relative
+		min-height: 320px
+		overflow: hidden
 	img 
-		height: 100%
-		width: 100%
-		object-fit: cover
-	
+		min-height: 100%
+		min-width: 100%
+		width: auto
+		max-width: none
+		height: auto
+		position: absolute
+		top: 50%
+		left: 50%
+		z-index: -1
+		+transform(translate(-50%, -50%))
+		+breakpoint(767px)
+			left: 28%
+		+breakpoint(500px)
+			left: 0
+
+		
 .main-content-text
 	margin-top: 173px
 	max-width: 462px
 	width: 100%
 	color: #454545
 	margin-left: 28px
-	+breakpoint(767px)
+	position: relative
+	z-index: 3
+	pointer-events: none
+	+breakpoint(1023px)
 		margin-left: 0
+	+breakpoint(767px)
+		margin-top: 30px
+		max-width: 400px
 	h3
 		font-size: 30px
 		line-height: 35px
@@ -40,6 +63,10 @@
 		padding-right: 113px
 		letter-spacing: 0em
 		margin-bottom: 26px
+		// pointer-events: none
+		+breakpoint(767px)
+			font-size: 20px
+			line-height: 22px
 		&:after
 			content: ""
 			width: 40px
@@ -52,16 +79,22 @@
 		line-height: 24px
 		display: block
 		margin-bottom: 24px
+		+breakpoint(767px)
+			font-size: 14px
+			line-height: 20px
 .main-content-text-price
 	font-size: 11px
 	text-transform: uppercase
 	font-weight: bold
 	background: #a70c5d
 	+border-radius(45px)
+	margin-bottom: 30px
 	color: #fff
 	padding: 13px 29px 15px 15px
 	display: inline-block
+	cursor: pointer
 	margin-top: 31px
+	pointer-events: all
 	&:hover
 		background: #d22c83
 	&:before
@@ -83,6 +116,10 @@
 	left: 50%
 	+transform(translate(-50%, -50%))
 	text-align: center
+	cursor: pointer
+	+transition(0.3s)
+	&:hover
+		+opacity(0.6)
 	&:before
 		content: ""
 		width: 0
@@ -118,6 +155,10 @@
 	color: #3f4147
 	margin-bottom: 13px
 	margin-top: 54px
+	+breakpoint(767px)
+		font-size: 22px
+		line-height: 1
+		margin-top: 34px
 	&:after
 		content: ""
 		width: 40px
@@ -141,6 +182,8 @@
 	border-bottom: 1px dashed #d0d1d3
 	padding: 35px 0 24px
 	position: relative
+	+breakpoint(767px)
+		padding: 0 0px 20px
 	&>.wrapper
 		+pie-clearfix
 		display: flex
@@ -183,6 +226,12 @@
 	+box-sizing(border-box)
 	+breakpoint(1023px)
 		padding: 0px 25px 0px 90px
+	+breakpoint(767px)
+		width: calc(100% - 46px)
+		left: auto
+		right: 0
+		z-index: 3
+				
 	h5
 		&:before
 			display: none
@@ -199,6 +248,9 @@
 		top: 0
 		right: 0
 		z-index: 1
+		+breakpoint(767px)
+			right: auto
+			left: -1px
 	.description-arrow
 		position: absolute
 		top: 50px
@@ -210,6 +262,11 @@
 		border-color: #a70c5d transparent transparent #a70c5d
 		background: #fff
 		z-index: 2
+		+breakpoint(767px)
+			top: 37px
+			right: auto
+			left: -5px
+			+transform(rotate(-45deg))
 	.description-item-left
 		position: absolute
 		left: -81px
@@ -240,7 +297,11 @@
 	.description-item-price
 		width: 33.333%
 		display: inline-block
-		vertical-align: middle
+		vertical-align: top
+		padding-right: 7px
+		+box-sizing(border-box)
+		+breakpoint(767px)
+			width: 100%
 		strong
 			font-size: 13px
 			line-height: 1
@@ -253,6 +314,8 @@
 			line-height: 1
 			&>strong
 				font-size: 18px
+				+breakpoint(767px)
+					font-size: 13px
 				span 
 					font-size: 11px
 .services-price-item-ins
@@ -269,12 +332,16 @@
 		padding-left: 70px
 	+breakpoint(767px)
 		width: 100%
+		padding-left: 50px
+		position: relative
 	&:nth-child(odd)
 		border-right: 1px dashed #d0d1d3
 		// padding-right: 70px
 		// padding-left: 0px
 		+breakpoint(767px)
 			border-right: none
+			border-bottom: 1px dashed #d0d1d3
+			padding-bottom: 30px
 		.description
 			left: auto
 			right: 0
@@ -285,13 +352,39 @@
 				right: auto
 				left: -5px
 				+transform(rotate(-45deg))
+	&.services-price-item-second
+		.description
+			top: auto
+			bottom: 0
+			+breakpoint(767px)
+				top: 0
+				bottom: auto
+			&:after
+				bottom: 0px
+				top: auto
+				+breakpoint(767px)
+					top: 0
+					bottom: auto
+					right: auto
+					left: -1px
+		.description-arrow
+			bottom: 160px
+			top: auto
+			+breakpoint(767px)
+				top: 37px
+				right: auto
+				left: -5px
+
+			
+
 	&:nth-child(even)
 		padding-left: 187px
 		padding-right: 0
 		+breakpoint(1023px)
 			padding-left: 100px
 		+breakpoint(767px)
-			padding-left: 70px
+			padding-left: 50px
+			padding-right: 30px
 	&.active
 		.description
 			max-height: 1000px
@@ -325,6 +418,10 @@
 		text-transform: uppercase
 		padding-right: 46px
 		position: relative
+		+breakpoint(767px)
+			font-size: 14px
+			line-height: 18px
+			padding-right: 20px
 		span 
 			display: block
 		&:before
@@ -335,6 +432,9 @@
 			top: 4px
 			font-weight: 300
 			+transition(0.3s)
+			+breakpoint(767px)
+				font-size: 32px
+				left: -50px
 	.info 
 		position: absolute
 		right: 9px
@@ -346,6 +446,8 @@
 		line-height: 0
 		padding: 7px
 		+transition(0.3s)
+		+breakpoint(767px)
+			right: -12px
 		&:after
 			content: ""
 			display: inline-block
@@ -373,6 +475,8 @@
 		margin-bottom: 0px
 		padding-left: 25px
 		position: relative
+		+breakpoint(767px)
+			font-size: 12px
 		&:before
 			content: ""
 			width: 7px
@@ -388,6 +492,8 @@
 	p 
 		font-size: 13px
 		line-height: 20px
+		+breakpoint(767px)
+			font-size: 12px
 	.services-price-icon-1
 		&:before
 			+font-icon("services-icon-4")
@@ -425,6 +531,10 @@
 	margin-top: 79px
 	+breakpoint(767px)
 		margin-top: 35px
+	&:hover
+		span 
+			&:before
+				animation: load 2s infinite
 	span 
 		&:before
 			+font-icon("reloading")
@@ -433,10 +543,26 @@
 			display: inline-block
 			vertical-align: top
 			+transform(rotate(40deg))
-			margin-top: -5px
+			margin-top: -2px
 			margin-right: 12px
 			font-weight: 300
-		
+@keyframes load
+	from
+		+transform(rotate(40deg))
+	to
+		+transform(rotate(360deg))
+// @keyframes identifier
+// 	0%
+// 		top: 0
+// 		left: 0
+// 	30%
+// 		top: 50px
+// 	68%, 72%
+// 		left: 50px
+// 	100%
+// 		top: 100px
+// 		left: 100%
+
 .reviews-item
 	padding-right: 43px
 	+box-sizing(border-box)
@@ -452,23 +578,37 @@
 		float: none
 		display: inline-block
 		vertical-align: top
-		text-align: left
+		text-align: center
 	+breakpoint(550px)
 		width: 100%
 		padding-right: 0
 		margin-bottom: 40px
+	&:hover
+		.quote
+			&:before
+				color: #a70c5d
+		.video
+			&:before
+				color: #a70c5d
+		.destination-name
+			color: #a70c5d
+		.play
+			&:before
+				border-left: 10px solid #a70c5d
 	.quote
 		padding-top: 4px
 		&:before
 			+font-icon("quote")
 			font-size: 18px
 			color: #c9cacf
+			+transition(0.3s)
 	.video
 		padding-top: 0px
 		&:before
 			+font-icon("video")
 			font-size: 22px
 			color: #c9cacf
+			+transition(0.3s)
 	p 
 		color: #3f4147
 .reviews-item-subject
@@ -501,6 +641,8 @@
 		.play
 			width: 41px
 			height: 41px
+			&:hover
+				+opacity(1)
 			&:before
 				border-top: 5px solid transparent
 				border-bottom: 5px solid transparent
@@ -518,6 +660,7 @@
 		display: block
 		margin-bottom: 17px
 		line-height: 1
+		+transition(0.3s)
 	.destination-company
 		font-size: 13px
 		color: #3f4147
@@ -554,7 +697,8 @@
 		display: block
 		width: 180px
 		border: none
-		margin-top: 200px
+		margin-top: 187px
+		+transition(0.3s)
 		&:hover
 			background: #d62a84
 		+breakpoint(1024px)
@@ -587,14 +731,15 @@
 			color: #3f4147
 			font-size: 11px
 			line-height: 1
-			+opacity(0.7)
+			// +opacity(0.5)
 			+transition(0.2s)
+			font-weight: 400
 		&:focus
 			+placeholder 
 				+opacity(0)
 	textarea
 		border: 1px solid #dcdcdc
-		color: #dcdcdc
+		color: #3f4147
 		font-size: 15px
 		line-height: 1
 		display: block
@@ -604,10 +749,11 @@
 		+box-sizing(border-box)
 		padding: 18px 16px
 		+placeholder 
-			color: #dcdcdc
+			color: #3f4147
 			font-size: 15px
 			line-height: 1
-			+opacity(0.8)
+			font-family: GothamPro, arial
+			+opacity(0.5)
 			+transition(0.2s)
 		&:focus
 			+placeholder 
